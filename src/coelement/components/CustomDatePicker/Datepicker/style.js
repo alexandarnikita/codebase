@@ -3,13 +3,14 @@ import { FormGroup, Label, Input, Dropdown, DropdownToggle, DropdownMenu } from 
 
 export const DatePickerContainer = styled.div`
   position: relative;
+  height:30px;
 `;
 
 export const DatePickerFormGroup = styled(FormGroup)`
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 146px;
+  width: 136px;
   height: 100%;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -19,10 +20,14 @@ export const DatePickerFormGroup = styled(FormGroup)`
 export const DatePickerLabel = styled(Label)`
   margin: 0;
   width: 30px;
+  font-size:16px;
+
+  padding-left:6px;
+  padding-right:6px;
   
   //padding-right: 6px;
   font-weight: 600;
-  font-size: 14px;
+
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #06c;
@@ -38,20 +43,21 @@ export const DatePickerInput = styled(Input)`
   font-size: 14px;
   margin-left: 0px;
   color: #333;
-  width:116px;
+  width:104px;
+  height:30px;
   padding-left:9px;
   padding-right:9px;
   box-shadow: none;
   border: none;
   text-align: center;
   margin-top: 0px;
-  letter-spacing: 1px;
+  //letter-spacing: 1px;
   background: transparent !important;
   display: flex;
   align-items: center;
   ::placeholder {
     color: #999;
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -64,7 +70,10 @@ export const DatePickerDropdown = styled(Dropdown)`
 
 export const DatePickerDropdownToggle = styled(DropdownToggle)`
   position: relative;
-  width: 500px;
+  width: 106px;
+  height:30px;
+  padding-left:9px;
+  padding-right:9px;
   background: transparent;
   opacity: 0;
   filter: alpha(opacity=0);

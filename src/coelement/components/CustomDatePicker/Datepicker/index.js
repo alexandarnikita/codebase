@@ -63,7 +63,7 @@ class CustomDatepicker extends React.Component {
             value={date ? date.split("-").join(" / ") : ""}
             onChange={this.handleChange}
             readOnly="readonly"
-            placeholder="YYYY/MM/DD"
+            placeholder="DD//MM/YYYY"
           />
           <Styled.DatePickerLabel>
             <i style={{ fontSize: 16, padding:6 }} className="glyphicon glyphicon-th" />
