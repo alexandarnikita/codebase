@@ -208,7 +208,7 @@ class Calendar extends Component {
     const daylabel = WEEK_DAYS[day].toUpperCase();
 
     return (
-      <Styled.CalendarDay key={daylabel} index={index}>
+      <Styled.CalendarDay key={index} index={index}>
         {daylabel}
       </Styled.CalendarDay>
     );

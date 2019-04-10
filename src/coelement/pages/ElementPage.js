@@ -13,7 +13,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import InputLabel from '@material-ui/core/InputLabel';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-
+import CustomDatepicker from '../components/CustomDatePicker/Datepicker';
 
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import { coelementStyle } from '../style/coelementStyle';
@@ -116,8 +116,15 @@ class ElementPage extends React.Component {
                       name="name" 
                       className="form-control"  
                       selected={new Date()} />
-                    
                 </Grid>
+              </Grid>
+              <Grid container spacing={8}  className={classes.displayFlex}>
+                  <Grid item md={2}>
+                      <Typography className={classes.Text}>Tab</Typography>
+                  </Grid>
+                  <Grid item md={10}>
+                      <CustomDatepicker/>
+                  </Grid>
               </Grid>
             </Grid>
           </Grid>

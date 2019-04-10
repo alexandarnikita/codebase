@@ -4,7 +4,7 @@ import Calendar from "../Calender";
 import * as Styled from "./style";
 import { isDate, getDateISO, CALENDAR_MODE } from "../helpers/calendar";
 
-class Datepicker extends React.Component {
+class CustomDatepicker extends React.Component {
   state = { date: null, calendarOpen: false, mode: CALENDAR_MODE.day };
 
   toggleCalendar = () =>
@@ -63,10 +63,10 @@ class Datepicker extends React.Component {
             value={date ? date.split("-").join(" / ") : ""}
             onChange={this.handleChange}
             readOnly="readonly"
-            placeholder="YYYY / MM / DD"
+            placeholder="YYYY/MM/DD"
           />
           <Styled.DatePickerLabel>
-            <i style={{ fontSize: 16 }} className="glyphicon glyphicon-th" />
+            <i style={{ fontSize: 16, padding:6 }} className="glyphicon glyphicon-th" />
           </Styled.DatePickerLabel>
         </Styled.DatePickerFormGroup>
         <Styled.DatePickerDropdown
@@ -91,10 +91,10 @@ class Datepicker extends React.Component {
   }
 }
 
-Datepicker.propTypes = {
+CustomDatepicker.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   onDateChanged: PropTypes.func
 };
 
-export default Datepicker;
+export default CustomDatepicker;
