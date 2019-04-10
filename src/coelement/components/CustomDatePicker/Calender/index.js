@@ -184,7 +184,7 @@ class Calendar extends Component {
           <span onClick={this.props.onChangeViewMode}>{year}</span>
         </Styled.CalendarMonth>
 
-        <div>
+        <div style={{ height: "10px" }}>
           <Styled.ArrowSvgLeft
             onMouseDown={this.handlePrevious}
             onMouseUp={this.clearPressureTimer}
@@ -248,14 +248,7 @@ class Calendar extends Component {
       <DateComponent key={getDateISO(_date)} {...props}>
         <p
           style={{
-            marginTop: -6,
-            color: inMonth
-              ? isCurrent
-                ? "#fff"
-                : isToday
-                ? "#00395d"
-                : "#666600"
-              : "#d5d5d6"
+            marginTop: -6
           }}
         >
           {_date.getDate()}

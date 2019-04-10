@@ -34,6 +34,8 @@ export const ArrowRight = styled(Arrow)`
 
 export const ArrowSvgLeft = styled(ChevronLeft)`
   color: #0074a6;
+  width: 10px !important;
+  height: 10px !important;
   :hover {
     color: #4097bc;
     cursor: default;
@@ -46,6 +48,9 @@ export const ArrowSvgLeft = styled(ChevronLeft)`
 
 export const ArrowSvgRight = styled(ChevronRight)`
   color: #0074a6;
+  width: 10px !important;
+  height: 10px !important;
+  margin-left: 6px;
   :hover {
     color: #4097bc;
     cursor: default;
@@ -67,6 +72,7 @@ export const CalendarHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 12px;
 `;
 
 export const CalendarGrid = styled.div`
@@ -85,7 +91,6 @@ export const CalendarMonth = styled.div`
   font-size: 16px;
   color: #0074a6;
   text-align: left;
-  padding: 0.5em 0.25em;
   word-spacing: 5px;
   user-select: none;
 `;
@@ -111,14 +116,15 @@ export const CalendarDay = styled(CalendarCell)`
 
 export const CalendarDate = styled(CalendarCell)`
   font-weight: ${props => (props.inMonth ? 500 : 300)};
-  font-size: 15px;
+  font-size: 14px;
   height: 28px;
+  width: 28px;
   cursor: pointer;
   border-bottom: ${props =>
     (props.index + 1) / 7 <= 5 ? `0px solid #ddd` : `none`};
   border-right: ${props =>
     (props.index % 7) + 1 === 7 ? `none` : `0px solid #ddd`};
-  color: ${props => (props.inMonth ? `#333` : `#ddd`)};
+  color: ${props => (props.inMonth ? `#666666` : `#ddd`)};
   grid-row: ${props => Math.floor(props.index / 7) + 2} / span 1;
   transition: all 0.4s ease-out;
   :hover {
@@ -148,12 +154,12 @@ export const DeactivatedCalendarDate = styled(CalendarDate)`
 `;
 
 export const TodayCalendarDate = styled(HighlightedCalendarDate)`
-  color: #06c !important;
+  color: #00395d !important;
   width: 28px;
   background: transparent !important;
+  border-bottom: 3px solid #00395d;
   p {
     color: #00395d;
-    border-bottom: 3px solid #00395d;
   }
   :hover {
     color: #06c !important;
