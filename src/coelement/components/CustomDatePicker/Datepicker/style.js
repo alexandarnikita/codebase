@@ -10,16 +10,17 @@ export const DatePickerFormGroup = styled(FormGroup)`
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 136px;
+  width: 135px;
   height: 100%;
   border: 1px solid lightgrey;
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom:0px;
 `;
 
 export const DatePickerLabel = styled(Label)`
   margin: 0;
-  width: 30px;
+  width: 29px;
   font-size:16px;
 
   padding-left:6px;
@@ -70,7 +71,7 @@ export const DatePickerDropdown = styled(Dropdown)`
 
 export const DatePickerDropdownToggle = styled(DropdownToggle)`
   position: relative;
-  width: 106px;
+  width: 105px;
   height:30px;
   padding-left:9px;
   padding-right:9px;

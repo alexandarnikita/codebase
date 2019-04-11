@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Calendar from "../Calender";
 import * as Styled from "./style";
 import { isDate, getDateISO, CALENDAR_MODE } from "../helpers/calendar";
+import './src/assignedaccounts/coelement/components/CustomDatePicker/Datepicker/costom_datepicker.css';
 
 class CustomDatepicker extends React.Component {
   state = { date: null, calendarOpen: false, mode: CALENDAR_MODE.day };
@@ -65,7 +66,8 @@ class CustomDatepicker extends React.Component {
             readOnly="readonly"
             placeholder="DD//MM/YYYY"
           />
-          <Styled.DatePickerLabel>
+          <Styled.DatePickerLabel
+           style={{height:28, width:29,}}>
             <i style={{ fontSize: 16, padding:6 }} className="glyphicon glyphicon-th" />
           </Styled.DatePickerLabel>
         </Styled.DatePickerFormGroup>
