@@ -24,11 +24,20 @@ class ElementPage extends React.Component {
     super(props);
     this.state = {
       value: 0,
+      date: new Date()
     }
   }
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
+
+  handleDateChange = (value) => {
+    this.setState({
+      date: value
+    })
+  };
+
   render() {
     const { classes } = this.props;
     const { value } = this.state;
@@ -134,12 +143,14 @@ class ElementPage extends React.Component {
                 <Grid item md={10}>
                   <ReactDatePicker>
                     <DatePicker
-                      dateFormat="DD-MM-YYYY"
-                      ref="filter.name "
-                      autoOk={true}
+                      dateFormat="dd/MM/YYYY"
                       name="name"
+                      dateFormat="P"
+                      weekLabel="S"
+                      useWeekdaysShort={false}
                       className="form-control"
-                      selected={new Date()} />
+                      selected={this.state.date}
+                      onChange={this.handleDateChange}/>
                   </ReactDatePicker>
                 </Grid>
               </Grid>
