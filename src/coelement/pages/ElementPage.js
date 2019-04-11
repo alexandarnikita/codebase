@@ -14,6 +14,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import CustomDatepicker from '../components/CustomDatePicker/Datepicker';
+import { ReactDatePicker } from '../components/ReactDatePicker';
 
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import { coelementStyle } from '../style/coelementStyle';
@@ -24,7 +25,7 @@ class ElementPage extends React.Component {
     this.state = {
       value: 0,
     }
-  }  
+  }
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -44,7 +45,7 @@ class ElementPage extends React.Component {
                   <InputLabel className={classes.labelStyle}>InputLabel</InputLabel>
                 </Grid>
                 <Grid item md={10}>
-                  <TextField 
+                  <TextField
                     className={classes.inputStyle}
                     placeholder="Input"
                   />
@@ -109,13 +110,13 @@ class ElementPage extends React.Component {
                   <Typography className={classes.Text}>Tab</Typography>
                 </Grid>
                 <Grid item md={10}>
-                    <DatePicker 
-                      dateFormat="MMM dd, YYYY" 
-                      ref="filter.name " 
-                      autoOk={true} 
-                      name="name" 
-                      className="form-control"  
-                      selected={new Date()} />
+                  <DatePicker
+                    dateFormat="MMM dd, YYYY"
+                    ref="filter.name "
+                    autoOk={true}
+                    name="name"
+                    className="form-control"
+                    selected={new Date()} />
                 </Grid>
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
@@ -125,6 +126,22 @@ class ElementPage extends React.Component {
                   <Grid item md={10}>
                       <CustomDatepicker/>
                   </Grid>
+              </Grid>
+              <Grid container spacing={8}  className={classes.displayFlex}>
+                <Grid item md={2}>
+                  <Typography className={classes.Text}>Tab</Typography>
+                </Grid>
+                <Grid item md={10}>
+                  <ReactDatePicker>
+                    <DatePicker
+                      dateFormat="DD-MM-YYYY"
+                      ref="filter.name "
+                      autoOk={true}
+                      name="name"
+                      className="form-control"
+                      selected={new Date()} />
+                  </ReactDatePicker>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
@@ -195,9 +212,9 @@ const styles = {
   tabsRoot: {
     borderBottom: '1px solid #d5d5d6',
   },
-  tabsIndicator: {    
+  tabsIndicator: {
     fontSize: 14,
-    backgroundColor: '#d5d5d6',   
+    backgroundColor: '#d5d5d6',
   },
   tabRoot: {
     borderRadius: 6,
@@ -217,7 +234,7 @@ const styles = {
     '&$tabSelected': {
       color: '#00395d',
       background:'linear-gradient(to bottom, #cce5f0 0%,#f2f8fb 100%)'
-      
+
     },
     '&:focus': {
       color: '#595959',
