@@ -2,3 +2,33 @@
     font-family: 'Sans-Expert-Regular';
     src: url('TheSans-Regular-Expert.ttf');
 }
+
+@font-face {
+    font-family: 'codebase';
+    src:  url('fonts/codebase.eot?xgb2lq');
+    src:  url('fonts/codebase.eot?xgb2lq#iefix') format('embedded-opentype'),
+    url('fonts/codebase.ttf?xgb2lq') format('truetype'),
+    url('fonts/codebase.woff?xgb2lq') format('woff'),
+    url('fonts/codebase.svg?xgb2lq#codebase') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'codebase' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar:before {
+    content: "\e900";
+}

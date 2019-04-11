@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Calendar from "../Calender";
 import * as Styled from "./style";
 import { isDate, getDateISO, CALENDAR_MODE } from "../helpers/calendar";
-import calendar_icon from './calendar.png';
 
 class CustomDatepicker extends React.Component {
   state = { date: null, calendarOpen: false, mode: CALENDAR_MODE.day };
@@ -67,7 +66,7 @@ class CustomDatepicker extends React.Component {
             placeholder="DD/MM/YYYY"
           />
           <Styled.DatePickerLabel>
-            <img src={calendar_icon} style={{ fontSize: 16, padding:0, width: 16, height: 16 }} />
+            <span className="icon-calendar" style={{ fontSize: 16, padding:0, width: 16, height: 16 }}></span>
           </Styled.DatePickerLabel>
         </Styled.DatePickerFormGroup>
         <Styled.DatePickerDropdown
