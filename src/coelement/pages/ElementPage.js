@@ -14,6 +14,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import CustomDatepicker from '../components/CustomDatePicker/Datepicker';
+import CustomDatePickerInput from '../components/CustomDatePickerInput';
 import { ReactDatePicker } from '../components/ReactDatePicker';
 
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
@@ -143,13 +144,34 @@ class ElementPage extends React.Component {
                 <Grid item md={10}>
                   <ReactDatePicker>
                     <DatePicker
+                      htmlFor="test"
                       dateFormat="dd/MM/YYYY"
                       name="name"
-                      dateFormat="P"
                       weekLabel="S"
                       useWeekdaysShort={false}
                       className="form-control"
                       selected={this.state.date}
+                      customInput={(<CustomDatePickerInput/>)}
+                      onChange={this.handleDateChange}/>
+                  </ReactDatePicker>
+                </Grid>
+              </Grid>
+              <Grid container spacing={8}  className={classes.displayFlex}>
+                <Grid item md={2}>
+                  <Typography className={classes.Text}>Tab</Typography>
+                </Grid>
+                <Grid item md={10}>
+                  <ReactDatePicker>
+                    <DatePicker
+                      htmlFor="test"
+                      dateFormat="dd/MM/YYYY"
+                      name="name"
+                      weekLabel="S"
+                      useWeekdaysShort={false}
+                      className="form-control"
+                      selected={this.state.date}
+                      showMonthYearPicker
+                      customInput={(<CustomDatePickerInput/>)}
                       onChange={this.handleDateChange}/>
                   </ReactDatePicker>
                 </Grid>

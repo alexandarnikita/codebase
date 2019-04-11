@@ -7,20 +7,44 @@ export const ReactDatePicker = styled.div.attrs({ className: 'react-date-styles'
     padding: 12px;
   }
   .react-datepicker__navigation {
+  
+    border: 0.3rem solid transparent;
+  
     &.react-datepicker__navigation--next {
-      top: 15px;
+      top: 18px;
       right: 12px;
       width: 10px;
       height: 10px;
+      border-left-color: #0074A6;
     }
     &.react-datepicker__navigation--previous {
-      top: 15px;
-      right: 31.5px;
+      top: 18px;
+      right: 28px;
       width: 10px;
       height: 10px;
       left: auto;
+      border-right-color: #0074A6;
     }
   }
+  
+  .react-datepicker__month-wrapper {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    
+    .react-datepicker__month-text {
+      font-weight: 500;
+      font-size: 15px;
+      height: 28px;
+      width: 56px;
+      cursor: pointer;
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #666666;
+    }
+  }
+  
   .react-datepicker-ignore-onclickoutside {
     border: 1px solid #0074a6;
     box-shadow: none;
@@ -42,8 +66,26 @@ export const ReactDatePicker = styled.div.attrs({ className: 'react-date-styles'
     }
   }
   
+  .react-datepicker-year-header {
+      text-align: left;
+      font-size: 16px;
+      color: #0074A6;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #d5d5d6;
+      font-weight: normal;
+  }
+  
   .react-datepicker__month {
     margin: 0;
+  }
+  
+  .react-datepicker__monthPicker {
+    padding-top: 12px;
+    
+    .react-datepicker__month-1, .react-datepicker__month-4, .react-datepicker__month-7, .react-datepicker__month-10 {
+      margin-left:14px;
+      margin-right: 14px;
+    }
   }
   
   .react-datepicker__day-names {
@@ -95,15 +137,26 @@ export const ReactDatePicker = styled.div.attrs({ className: 'react-date-styles'
   }
   
   .react-datepicker__input-container {
+    .form-group {
+      margin: 0px;
+    }
+  
     input {
       padding: 9px;
+      width: 122px;
+      
+      &:focus {
+        border: 1px solid #0074A6;
+        box-shadow: none;
+        
+        & + span {
+          color: #0074A6;
+          border-color: #0074A6;
+        }
+      }
     }
     
-    &:has(> input.react-datepicker-ignore-onclickoutside) {
-      border-color: red !important;
-    }
-    
-    &:after {
+    p {
       font-family: 'codebase' !important;
       speak: none;
       font-style: normal;
@@ -118,31 +171,21 @@ export const ReactDatePicker = styled.div.attrs({ className: 'react-date-styles'
       font-size: 16px;
       border-left: 1px solid #cccccc;
       padding: 9px 6px;
+      color: #0074A6;
     }
     
-    &:has (> input.react-datepicker-ignore-onclickoutside) {
-      &:after {
-        font-family: 'codebase' !important;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        content: "\\e900";
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 16px;
-        border-left: 1px solid red;
-        padding: 9px 6px;
-      }
-    }
   }
   
-  .react-datepicker-ignore-onclickoutside  {
-    &::parent {
-      display: none;
-    }    
+  div < input.form-control.react-datepicker-ignore-onclickoutside {
+      display: none !important;
   }
+  
+  div < div.react-datepicker__input-container {
+    width: 100% !important;
+  }
+  
+  $div.react-datepicker__input-container input.form-control.react-datepicker-ignore-onclickoutside {
+    background-color: red;
+  } 
+  
 `;
