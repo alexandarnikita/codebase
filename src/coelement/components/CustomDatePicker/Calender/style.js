@@ -73,6 +73,7 @@ export const CalendarHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-bottom: 12px;
+  border-bottom: 1px solid lightgrey;
 `;
 
 export const CalendarGrid = styled.div`
@@ -82,7 +83,9 @@ export const CalendarGrid = styled.div`
 
 export const CalendarMonthGrid = styled.div`
   display: grid;
+  padding-bottom: 7px;
   grid-template: repeat(3, auto) / repeat(3, auto);
+  grid-gap: 14px;
 `;
 
 export const CalendarMonth = styled.div`
@@ -108,7 +111,6 @@ export const CalendarDay = styled(CalendarCell)`
   font-weight: 600;
   font-size: 12px;
   color: #4097bc;
-  border-top: 1px solid lightgrey;
   border-bottom: 0px solid #06c;
   border-right: ${props =>
     (props.index % 7) + 1 === 7 ? `none` : `0px solid #06c`};
@@ -171,7 +173,6 @@ export const CalendarMonthCell = styled.div`
   text-align: center;
   align-self: center;
   letter-spacing: 0.1rem;
-  padding: 0.6em 0.25em;
   user-select: none;
   grid-column: ${props => (props.index % 3) + 1} / span 1;
 `;
@@ -180,7 +181,9 @@ export const CalendarMonthItem = styled(CalendarMonthCell)`
   font-weight: 500;
   font-size: 15px;
   height: 28px;
+  width: 56px;
   cursor: pointer;
+  padding: 0.6em 0;
   border-bottom: ${props =>
     (props.index + 1) / 3 <= 1 ? `0px solid #ddd` : `none`};
   border-right: ${props =>
@@ -188,6 +191,8 @@ export const CalendarMonthItem = styled(CalendarMonthCell)`
   color: #666;
   grid-row: ${props => Math.floor(props.index / 3) + 2} / span 1;
   transition: all 0.4s ease-out;
+  margin-bottom: 2px;
+  margin-top: 2px;
   :hover {
     color: #06c;
     background: rgba(0, 102, 204, 0.075);
@@ -199,6 +204,8 @@ export const HighlightedCalendarMonth = styled(CalendarMonthItem)`
   background: #0074a6 !important;
   position: relative;
   top: 0px;
+  margin-bottom: 2px;
+  margin-top: 2px;
   ::before {
     content: "";
     position: absolute;
@@ -213,7 +220,6 @@ export const HighlightedCalendarMonth = styled(CalendarMonthItem)`
 export const CurrentCalendarMonth = styled(CalendarMonthItem)`
   color: #fff !important;
   background: #0074a6 !important;
-  margin: 0 0.2em;
   padding: 0.6em 0;
   ::after {
     content: "";

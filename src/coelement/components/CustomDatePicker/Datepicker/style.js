@@ -9,18 +9,17 @@ export const DatePickerFormGroup = styled(FormGroup)`
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 146px;
+  width: fit-content;
   height: 100%;
   border: 1px solid lightgrey;
   border-radius: 5px;
   overflow: hidden;
+  padding: 0px !important;
 `;
 
 export const DatePickerLabel = styled(Label)`
   margin: 0;
-  width: 30px;
-  
-  //padding-right: 6px;
+  padding: 6px;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 2px;
@@ -38,13 +37,12 @@ export const DatePickerInput = styled(Input)`
   font-size: 14px;
   margin-left: 0px;
   color: #333;
-  width:116px;
   padding-left:9px;
   padding-right:9px;
   box-shadow: none;
   border: none;
-  text-align: center;
   margin-top: 0px;
+  width: 120px;
   letter-spacing: 1px;
   background: transparent !important;
   display: flex;
@@ -58,13 +56,15 @@ export const DatePickerInput = styled(Input)`
 export const DatePickerDropdown = styled(Dropdown)`
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
 `;
 
 export const DatePickerDropdownToggle = styled(DropdownToggle)`
   position: relative;
-  width: 500px;
+  width: 100%;
+  height: 100%;
   background: transparent;
   opacity: 0;
   filter: alpha(opacity=0);
