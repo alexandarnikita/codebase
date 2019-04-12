@@ -21,3 +21,4 @@ export const CalendarInputSpan = styled.span.attrs({ className: 'icon-calendar' 
 export const CalendarInput = styled.input.attrs({ className: 'form-control' })`
   
 `;
+

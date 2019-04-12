@@ -16,16 +16,25 @@ import Tab from '@material-ui/core/Tab';
 import CustomDatepicker from '../components/CustomDatePicker/Datepicker';
 import CustomDatePickerInput from '../components/CustomDatePickerInput';
 import { ReactDatePicker } from '../components/ReactDatePicker';
-
+import {CheckText} from '../components/CheckText';
+import CustomRadioText from '../components/CustomRadioText';
+import Checkbox from '@material-ui/core/Checkbox'
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-import { coelementStyle } from '../style/coelementStyle';
+import { coelementStyle } from '../style/coelementStyle'
+// import styled from 'styled-components';
+// const Wrapper = styled.div`
+//    width: 14px;
+//   height: 14px;
+//   border-radius: 3px;
+// `;
 
 class ElementPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       value: 0,
-      date: new Date()
+      date: new Date(),
+        checked:false
     }
   }
 
@@ -38,6 +47,9 @@ class ElementPage extends React.Component {
       date: value
     })
   };
+    handleChangeCheck = event => {
+        this.setState({ checked :event.target.checked });
+    }
 
   render() {
     const { classes } = this.props;
@@ -58,7 +70,12 @@ class ElementPage extends React.Component {
                   <TextField
                     className={classes.inputStyle}
                     placeholder="Input"
-                  />
+                />
+                    <TextField
+                        type="check"
+                        className={classes.inputStyle}
+                        placeholder="Input"
+                    />
                 </Grid>
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
@@ -87,7 +104,7 @@ class ElementPage extends React.Component {
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
                 <Grid item md={2}>
-                  <Typography className={classes.Text}>Tab</Typography>
+                  <Typography className={classes.Text}>Button</Typography>
                 </Grid>
                 <Grid item md={10}>
                   <div className={classes.root}>
@@ -117,7 +134,7 @@ class ElementPage extends React.Component {
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
                 <Grid item md={2}>
-                  <Typography className={classes.Text}>Tab</Typography>
+                  <Typography className={classes.Text}>Calendar_1</Typography>
                 </Grid>
                 <Grid item md={10}>
                   <DatePicker
@@ -131,7 +148,7 @@ class ElementPage extends React.Component {
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
                   <Grid item md={2}>
-                      <Typography className={classes.Text}>Tab</Typography>
+                      <Typography className={classes.Text}>Calendar_2</Typography>
                   </Grid>
                   <Grid item md={10}>
                       <CustomDatepicker/>
@@ -139,7 +156,7 @@ class ElementPage extends React.Component {
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
                 <Grid item md={2}>
-                  <Typography className={classes.Text}>Tab</Typography>
+                  <Typography className={classes.Text}>Calendar_3</Typography>
                 </Grid>
                 <Grid item md={10}>
                   <ReactDatePicker>
@@ -158,7 +175,7 @@ class ElementPage extends React.Component {
               </Grid>
               <Grid container spacing={8}  className={classes.displayFlex}>
                 <Grid item md={2}>
-                  <Typography className={classes.Text}>Tab</Typography>
+                  <Typography className={classes.Text}>Calendar_3</Typography>
                 </Grid>
                 <Grid item md={10}>
                   <ReactDatePicker>
@@ -176,6 +193,31 @@ class ElementPage extends React.Component {
                   </ReactDatePicker>
                 </Grid>
               </Grid>
+              <Grid container spacing={8} className={classes.displayFlex}>
+                <Grid item md={2}>
+                    <Typography className={classes.Text}>Checkbox</Typography>
+                </Grid>
+                <Grid item={10}>
+                    <CheckText>
+                        <div className="checkPlanTop">
+                            <Checkbox
+                                className='check_sample'
+                                checked={this.state.checked}
+                                onChange={this.handleChangeCheck}
+                                defaultChecked color='#0074A6'
+                               // width={14};
+
+                            />
+                            <label
+                                className='check_sample_label'>
+                                Select All
+                            </label>
+                        </div>
+                        <CustomRadioText/>
+                    </CheckText>
+                </Grid>
+               </Grid>
+
             </Grid>
           </Grid>
         </MuiThemeProvider>
