@@ -16,9 +16,9 @@ import Tab from '@material-ui/core/Tab';
 import CustomDatepicker from '../components/CustomDatePicker/Datepicker';
 import CustomDatePickerInput from '../components/CustomDatePickerInput';
 import { ReactDatePicker } from '../components/ReactDatePicker';
-import {CheckText} from '../components/CheckText';
-import CustomRadioText from '../components/CustomRadioText';
-import Checkbox from '@material-ui/core/Checkbox'
+import Checkbox from '@material-ui/core/Checkbox';
+import { CustomCheckBox } from '../components/CustomCheckBox';
+import { CustomRadio } from '../components/CustomRadio';
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import { coelementStyle } from '../style/coelementStyle'
 // import styled from 'styled-components';
@@ -34,7 +34,7 @@ class ElementPage extends React.Component {
     this.state = {
       value: 0,
       date: new Date(),
-        checked:false
+      checked:false
     }
   }
 
@@ -47,9 +47,10 @@ class ElementPage extends React.Component {
       date: value
     })
   };
-    handleChangeCheck = event => {
-        this.setState({ checked :event.target.checked });
-    }
+
+  handleChangeCheck = name => event => {
+    this.setState({ [name] :event.target.checked });
+  };
 
   render() {
     const { classes } = this.props;
@@ -198,26 +199,25 @@ class ElementPage extends React.Component {
                     <Typography className={classes.Text}>Checkbox</Typography>
                 </Grid>
                 <Grid item={10}>
-                    <CheckText>
-                        <div className="checkPlanTop">
-                            <Checkbox
-                                className='check_sample'
-                                checked={this.state.checked}
-                                onChange={this.handleChangeCheck}
-                                defaultChecked color='#0074A6'
-                               // width={14};
-
-                            />
-                            <label
-                                className='check_sample_label'>
-                                Select All
-                            </label>
-                        </div>
-                        <CustomRadioText/>
-                    </CheckText>
+                  <CustomCheckBox>
+                    Select All
+                    <input type="checkbox" />
+                    <span></span>
+                  </CustomCheckBox>
                 </Grid>
-               </Grid>
-
+              </Grid>
+              <Grid container spacing={8} className={classes.displayFlex}>
+                <Grid item md={2}>
+                  <Typography className={classes.Text}>Radio</Typography>
+                </Grid>
+                <Grid item={10}>
+                  <CustomRadio>
+                    Option
+                    <input type="radio" />
+                    <span></span>
+                  </CustomRadio>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </MuiThemeProvider>
